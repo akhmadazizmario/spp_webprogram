@@ -14,7 +14,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md">
-                    <?= form_open('admin/guru/ubahDataGuru'); ?>
+                    <?= form_open('admin/users/ubahDataUser'); ?>
                     <input type="text" name="id_user" id="id_user" value="<?= $user['id_user']; ?>">
                     <div class="form-group">
                         <label for="nama">Nama lengkap</label>

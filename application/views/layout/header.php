@@ -8,6 +8,7 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.1.1">
   <title><?= $title; ?></title>
+  <link rel="icon" type="image/png" href="https://www.pinclipart.com/picdir/big/402-4023169_free-download-logo-kampus-universitas-format-png-.png">
 
   <!-- Bootstrap core CSS -->
   <link href="<?= base_url('/assets/'); ?>css/bootstrap.min.css" rel="stylesheet">
