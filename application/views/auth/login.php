@@ -8,6 +8,7 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.1.1">
   <title><?= $title; ?></title>
+  <link rel="icon" type="image/png" href="https://www.pinclipart.com/picdir/big/402-4023169_free-download-logo-kampus-universitas-format-png-.png">
 
   <!-- Bootstrap core CSS -->
   <link href="<?= base_url('/assets/'); ?>css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +54,7 @@
             <form class="form-signin" action="<?= base_url('auth'); ?>" method="post">
               <center>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <h1 class="h3 mb-3 font-weight-normal">APLIKASI SPP SMK N 1 JAKARTA <h1>ADMIN</h1>
+                  <h1 class="h3 mb-3 font-weight-normal">APLIKASI SPP SMA N 1 JAKARTA <h1>ADMIN</h1>
                   </h1>
 
                   <?= $this->session->flashdata('pesan'); ?>

@@ -36,8 +36,14 @@
                     </h6>
                     <li class="nav-item">
                         <a class="nav-link<?= $this->uri->segment(2) == 'users' ? ' active' : '' ?>" href="<?= base_url('siswa/profil'); ?>">
-                            <i class="fas fa-users"></i>
+                            <i class="fas fa-user"></i>
                             profil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link<?= $this->uri->segment(2) == 'users' ? ' active' : '' ?>" href="http://localhost/latihansppwebprogram/siswa/profil/ubahSiswa/10">
+                            <i class="fas fa-key"></i>
+                            ubah profil
                         </a>
                     </li>
                     <li class="nav-item">
