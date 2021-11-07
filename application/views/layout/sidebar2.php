@@ -59,7 +59,7 @@
                         </a>
                     </h6>
                     <li class="nav-item">
-                        <a class="nav-link bg-light text-dark" href="<?= base_url('auth/logout'); ?>">
+                        <a class="nav-link bg-light text-dark" href="<?= base_url('auth2/logout'); ?>">
                             <i class="fas fa-sign-out-alt"></i>
                             Sign out</a>
                     </li>

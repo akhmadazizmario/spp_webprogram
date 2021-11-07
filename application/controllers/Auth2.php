@@ -25,11 +25,11 @@ class Auth2 extends CI_Controller
     private function _login()
     {
         $username = $this->input->post('username', true);
-        $password = $this->input->post('password', true);
+        $password = $this->input->post('password', PASSWORD_DEFAULT);
 
         $user = $this->Auth2_m->get_where('siswa', ['username' => $username])->row_array();
         if ($user != null) {
-            if (sha1($password) == $user['password']) {
+            if (password_verify($password, $user['password'])) {
                 $data = [
                     'username' => $user['username'],
                     'id_siswa' => $user['id_siswa'],

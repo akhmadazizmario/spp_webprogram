@@ -13,7 +13,7 @@ class Auth extends CI_Controller
     {
         $this->cekLogin();
         $data['title'] = 'Halaman Login';
-        $this->form_validation->set_rules('username', 'Username', 'required|trim', ['required' => 'Username wajib di isi!.']);
+        $this->form_validation->set_rules('username', 'username', 'required|trim', ['required' => 'Username wajib di isi!.']);
         $this->form_validation->set_rules('password', 'Password', 'required|trim', ['required' => 'Password wajib di isi!.']);
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('auth/login', $data);

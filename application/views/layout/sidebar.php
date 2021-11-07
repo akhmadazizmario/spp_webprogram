@@ -36,7 +36,7 @@
           <li class="nav-item">
             <a class="nav-link<?= $this->uri->segment(2) == 'users' ? ' active' : '' ?>" href="<?= base_url('admin/users'); ?>">
               <i class="fas fa-users"></i>
-              Data Users
+              Data users
             </a>
           </li>
           <li class="nav-item">

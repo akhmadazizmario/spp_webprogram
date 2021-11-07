@@ -16,7 +16,7 @@ class profil extends CI_Controller
         $data['title'] = 'siswa';
         $data['user'] = $this->Auth2_m->get_where('siswa', ['username' => $this->session->userdata('username')])->row_array();
         $data['siswa'] = $this->User2_m->get('siswa')->result_array();
-        $this->form_validation->set_rules('nama', 'Nama_siswa', 'required|trim');
+        $this->form_validation->set_rules('nama_siswa', 'Nama_siswa', 'required|trim');
         $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|max_length[12]');
         $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|max_length[12]');
         if ($this->form_validation->run() == FALSE) {
@@ -41,9 +41,10 @@ class profil extends CI_Controller
         $data['siswa'] = $this->User2_m->get_where('siswa', $where)->row_array();
         $data['title'] = 'Ubah Data siswa ';
 
-        $this->form_validation->set_rules('nama_siswa', 'nama lengkap', 'required|trim');
+        $this->form_validation->set_rules('nama_siswa', 'nama_siswa', 'required|trim');
         $this->form_validation->set_rules('username', 'username', 'required|trim');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|max_length[12]');
+        $this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
+        $this->form_validation->set_rules('nohp', 'nohp', 'required|trim');
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('layout/header', $data);
             $this->load->view('layout/sidebar2', $data);
@@ -58,13 +59,49 @@ class profil extends CI_Controller
     {
         $idUser = $this->input->post('id_siswa');
         $data = [
-            'password' => html_escape(sha1($this->input->post('password', true))),
             'username' => html_escape($this->input->post('username', true)),
-            'nama lengkap' => html_escape($this->input->post('nama_siswa', true))
+            'nama_siswa' => html_escape($this->input->post('nama_siswa', true)),
+            'alamat' => html_escape($this->input->post('alamat', true)),
+            'nohp' => html_escape($this->input->post('nohp', true))
         ];
         $this->db->where('id_siswa', $idUser);
         $this->User2_m->update('siswa', $data);
         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><i class="fas fa-info-circle"></i> Data User Berhasil Diubah.</div>');
         redirect('siswa/profil');
+    }
+    public function changePassword()
+    {
+        $data['title'] = 'change password';
+        $data['user'] = $this->Auth2_m->get_where('siswa', ['id_siswa' => $this->session->userdata('id_siswa')])->row_array();
+
+        $this->form_validation->set_rules('current_password', 'current password', 'required|trim');
+        $this->form_validation->set_rules('new_password1', 'new password', 'required|trim|min_length[3]|matches[new_password2]');
+        $this->form_validation->set_rules('new_password2', 'confirm new password', 'required|trim|min_length[3]|matches[new_password1]');
+        if ($this->form_validation->run() == false) {
+            $this->load->view('layout/header', $data);
+            $this->load->view('layout/sidebar2', $data);
+            $this->load->view('siswa/profil/changepassword', $data);
+            $this->load->view('layout/footer');
+        } else {
+            $current_password = $this->input->post('current_password');
+            $new_password = $this->input->post('new_password1');
+            if (!password_verify($current_password, $data['user']['password'])) {
+                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">uppss!</div>');
+                redirect("http://localhost/latihansppwebprogram/siswa/profil/changepassword");
+            } else {
+                if ($current_password == $new_password) {
+                    $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">new password sacnnot!!</div>');
+                    redirect("http://localhost/latihansppwebprogram/siswa/profil/changepassword");
+                } else {
+                    //password sudah ok
+                    $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+                    $this->db->set('password', $password_hash);
+                    $this->db->where('id_siswa', $this->session->userdata('id_siswa'));
+                    $this->db->update('siswa');
+                    $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">password changed</div>');
+                    redirect("http://localhost/latihansppwebprogram/siswa/profil/changepassword");
+                }
+            }
+        }
     }
 }

@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="foto">
-                        <img src="https://www.interskill.id/empty-photo.png" alt="" width="230" height="260">
+                        <img src="https://images.vexels.com/media/users/3/147102/isolated/preview/082213cb0f9eabb7e6715f59ef7d322a-instagram-profile-icon.png" alt="" width="230" height="340">
                     </div>
                 </div>
                 <div class="col-md-8 kertas-biodata">
@@ -64,27 +64,37 @@
                                                 <tr>
                                                     <td class="textt">nis</td>
                                                     <td>:</td>
-                                                    <td> <?= $user['nis']; ?></td>
+                                                    <td style="color: red; font-weight:bold"> <?= $user['nis']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="textt">Kelas</td>
                                                     <td>:</td>
-                                                    <td> <?= $user['kelas']; ?></td>
+                                                    <td style="color: black; font-weight:bold"> <?= $user['kelas']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="textt">Tahun ajaran</td>
                                                     <td>:</td>
-                                                    <td> <?= $user['tahun_ajaran']; ?></td>
+                                                    <td style="color: red; font-weight:bold"> <?= $user['tahun_ajaran']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="textt">nama sekolah</td>
                                                     <td>:</td>
-                                                    <td>SMK N 1 JAKARTA</td>
+                                                    <td style="color: black; font-weight:bold">SMK N 1 JAKARTA</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="textt">username</td>
                                                     <td>:</td>
-                                                    <td> <?= $user['username']; ?></td>
+                                                    <td style="color: blue; font-weight:bold"> <?= $user['username']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="textt">Alamat </td>
+                                                    <td>:</td>
+                                                    <td style="color: black; font-weight:bold"> <?= $user['alamat']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="textt">no.hp</td>
+                                                    <td>:</td>
+                                                    <td style="color: red; font-weight:bold"> <?= $user['nohp']; ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>

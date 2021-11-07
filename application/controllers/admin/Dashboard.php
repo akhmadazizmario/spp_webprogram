@@ -1,14 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Dashboard extends CI_Controller
+{
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Auth_m');
 		cekSession();
 	}
-	
+
 	public function index()
 	{
 		$data['title'] = 'Dashboard';
@@ -18,5 +19,4 @@ class Dashboard extends CI_Controller {
 		$this->load->view('admin/dashboard', $data);
 		$this->load->view('layout/footer');
 	}
-
 }

@@ -60,7 +60,7 @@
                   <?= $this->session->flashdata('pesan'); ?>
                   <div class="form-group">
                     <label for="username" class="sr-only">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" placeholder="Username" autofocus>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="username" autofocus>
                     <small class="muted text-danger"><?= form_error('username'); ?></small>
                   </div>
                   <div class="form-group">

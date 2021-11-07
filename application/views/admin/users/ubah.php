@@ -22,7 +22,22 @@
                         <small class="muted text-danger"><?= form_error('nama'); ?></small>
                     </div>
                     <div class="form-group">
-                        <label for="nama">Password</label>
+                        <label for="nama">username</label>
+                        <input type="text" name="username" id="username" value="<?= $user['username']; ?>" class="form-control">
+                        <small class="muted text-danger"><?= form_error('username'); ?></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama">alamat</label>
+                        <input type="text" name="alamat" id="alamat" value="<?= $user['alamat']; ?>" class="form-control">
+                        <small class="muted text-danger"><?= form_error('alamat'); ?></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama">No.hp</label>
+                        <input type="text" name="nohp" id="nohp" value="<?= $user['nohp']; ?>" class="form-control">
+                        <small class="muted text-danger"><?= form_error('nohp'); ?></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama">password</label>
                         <input type="text" name="password" id="password" value="<?= $user['password']; ?>" class="form-control">
                         <small class="muted text-danger"><?= form_error('password'); ?></small>
                     </div>

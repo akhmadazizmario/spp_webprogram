@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class User_m extends CI_Model {
+class User_m extends CI_Model
+{
 	public function get_where($table, $where)
 	{
 		return $this->db->get_where($table, $where);
@@ -26,5 +27,4 @@ class User_m extends CI_Model {
 	{
 		return $this->db->get_where('guru', $idGuru)->row_array();
 	}
-
 }
