@@ -23,6 +23,9 @@ class Siswa extends CI_Controller
 		$this->form_validation->set_rules('nis', 'NIS', 'required|trim', ['required' => 'NIS wajib di isi!.']);
 		$this->form_validation->set_rules('tahun_ajaran', 'Tahun Ajaran', 'required|trim', ['required' => 'Tahun Ajaran wajib di isi!.']);
 		$this->form_validation->set_rules('biaya', 'Biaya', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
+		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim', ['required' => 'alamat wajib di isi!.']);
+		$this->form_validation->set_rules('nohp', 'nohp', 'required|trim', ['required' => 'nohp wajib di isi!.']);
+		$this->form_validation->set_rules('password', 'password', 'required|trim', ['required' => 'password wajib di isi!.']);
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
@@ -35,6 +38,9 @@ class Siswa extends CI_Controller
 				'nama_siswa' => html_escape($this->input->post('nama', true)),
 				'kelas' => html_escape($this->input->post('kelas', true)),
 				'tahun_ajaran' => html_escape($this->input->post('tahun_ajaran', true)),
+				'alamat' => html_escape($this->input->post('alamat', true)),
+				'nohp' => html_escape($this->input->post('nohp', true)),
+				'password' => html_escape($this->input->post('password', true)),
 				'biaya' => $biaya
 			];
 
@@ -102,10 +108,14 @@ class Siswa extends CI_Controller
 
 		// Rules Form
 		$this->form_validation->set_rules('nama', 'Nama Siswa', 'required|trim', ['required' => 'Nama Siswa wajib di isi!.']);
+		$this->form_validation->set_rules('username', 'username', 'required|trim', ['required' => 'username wajib di isi!.']);
 		$this->form_validation->set_rules('kelas', 'Kelas', 'required|trim', ['required' => 'Kelas wajib di isi!.']);
 		$this->form_validation->set_rules('nis', 'NIS', 'required|trim', ['required' => 'NIS wajib di isi!.']);
 		$this->form_validation->set_rules('tahun_ajaran', 'Tahun Ajaran', 'required|trim', ['required' => 'Tahun Ajaran wajib di isi!.']);
 		$this->form_validation->set_rules('biaya', 'Biaya', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
+		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim', ['required' => 'alamat wajib di isi!.']);
+		$this->form_validation->set_rules('nohp', 'nohp', 'required|trim', ['required' => 'nohp wajib di isi!.']);
+		$this->form_validation->set_rules('password', 'password', 'required|trim', ['required' => 'nohp wajib di isi!.']);
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
@@ -122,9 +132,13 @@ class Siswa extends CI_Controller
 		$data = [
 			'nis' => html_escape($this->input->post('nis', true)),
 			'nama_siswa' => html_escape($this->input->post('nama', true)),
+			'username' => html_escape($this->input->post('username', true)),
 			'kelas' => html_escape($this->input->post('kelas', true)),
 			'tahun_ajaran' => html_escape($this->input->post('tahun_ajaran', true)),
-			'biaya' => html_escape($this->input->post('biaya', true))
+			'biaya' => html_escape($this->input->post('biaya', true)),
+			'alamat' => html_escape($this->input->post('alamat', true)),
+			'nohp' => html_escape($this->input->post('nohp', true)),
+			'password' => html_escape($this->input->post('password', true))
 		];
 		$this->db->where('id_siswa', $idSiswa);
 		$this->Siswa_m->update('siswa', $data);

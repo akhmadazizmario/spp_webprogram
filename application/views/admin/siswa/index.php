@@ -19,10 +19,12 @@
       <tr>
         <td>No</td>
         <td>NIS</td>
-        <td>Siswa</td>
+        <td>nama_Siswa</td>
         <td>Kelas</td>
         <td>Tahun Ajaran</td>
         <td>Biaya</td>
+        <td>alamat</td>
+        <td>no.hp</td>
         <td><i class="fas fa-cogs"></i></td>
       </tr>
     </thead>
@@ -36,6 +38,8 @@
           <td><?= $g['kelas']; ?></td>
           <td><?= $g['tahun_ajaran']; ?></td>
           <td><?= $g['biaya']; ?></td>
+          <td><?= $g['alamat']; ?></td>
+          <td><?= $g['nohp']; ?></td>
           <td>
             <a href="<?= base_url('admin/siswa/ubahSiswa/') . $g['id_siswa']; ?>" class="btn btn-primary">
               <i class="fas fa-edit"></i>
@@ -71,6 +75,11 @@
           <small class="muted text-danger"><?= form_error('nama'); ?></small>
         </div>
         <div class="form-group">
+          <label for="username">username</label>
+          <input type="text" name="username" id="username" class="form-control">
+          <small class="muted text-danger"><?= form_error('username'); ?></small>
+        </div>
+        <div class="form-group">
           <label for="kelas">kelas</label>
           <select name="kelas" id="kelas" class="form-control">
             <option value="">-- Pilih Kelas --</option>
@@ -82,7 +91,7 @@
         </div>
         <div class="form-group">
           <label for="tahun_ajaran">Tahun Ajaran</label>
-          <input type="text" name="tahun_ajaran" id="tahun_ajaran" readonly value="2017/2018" class="form-control">
+          <input type="text" name="tahun_ajaran" id="tahun_ajaran" readonly value="2020/2021" class="form-control">
           <small class="muted text-danger"><?= form_error('tahun_ajaran'); ?></small>
         </div>
         <div class="form-group">
@@ -92,8 +101,23 @@
         </div>
         <div class="form-group">
           <label for="jatuh_tempo">Jatuh Tempo Pertama</label>
-          <input type="text" name="jatuh_tempo" id="jatuh_tempo" value="2017-07-10" readonly class="form-control">
+          <input type="text" name="jatuh_tempo" id="jatuh_tempo" value="2020-06-01" readonly class="form-control">
           <small class="muted text-danger"><?= form_error('jatuh_tempo'); ?></small>
+        </div>
+        <div class="form-group">
+          <label for="alamat">alamat</label>
+          <input type="text" name="alamat" id="alamat" class="form-control">
+          <small class="muted text-danger"><?= form_error('alamat'); ?></small>
+        </div>
+        <div class="form-group">
+          <label for="nohp">no.hp</label>
+          <input type="select" name="nohp" id="nohp" class="form-control">
+          <small class="muted text-danger"><?= form_error('nohp'); ?></small>
+        </div>
+        <div class="form-group">
+          <label for="password">password</label>
+          <input type="password" name="password" id="password" class="form-control">
+          <small class="muted text-danger"><?= form_error('password'); ?></small>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

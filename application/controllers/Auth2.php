@@ -29,7 +29,7 @@ class Auth2 extends CI_Controller
 
         $user = $this->Auth2_m->get_where('siswa', ['username' => $username])->row_array();
         if ($user != null) {
-            if (password_verify($password, $user['password'])) {
+            if (sha1($password) == $user['password']) {
                 $data = [
                     'username' => $user['username'],
                     'id_siswa' => $user['id_siswa'],

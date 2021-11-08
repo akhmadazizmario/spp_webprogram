@@ -20,6 +20,9 @@
         <td>No</td>
         <td>Nama Lengkap</td>
         <td>Username</td>
+        <td>alamat</td>
+        <td>no.hp</td>
+        <td>Level</td>
         <td><i class="fas fa-cogs"></i></td>
       </tr>
     </thead>
@@ -30,6 +33,9 @@
           <td><?= $no++; ?></td>
           <td><?= $u['nama_lengkap']; ?></td>
           <td><?= $u['username']; ?></td>
+          <td><?= $u['alamat']; ?></td>
+          <td><?= $u['nohp']; ?></td>
+          <td><?= $u['level']; ?></td>
           <td>
             <a href="<?= base_url('admin/users/ubahUser/') . $u['id_user']; ?>" class="btn btn-primary">
               <i class="fas fa-edit"></i>
@@ -65,7 +71,22 @@
           <small class="muted text-danger"><?= form_error('username'); ?></small>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="alamat">alamat</label>
+          <input type="text" name="alamat" id="alamat" class="form-control">
+          <small class="muted text-danger"><?= form_error('alamat'); ?></small>
+        </div>
+        <div class="form-group">
+          <label for="nohp">no.hp</label>
+          <input type="text" name="nohp" id="nohp" class="form-control">
+          <small class="muted text-danger"><?= form_error('nohp'); ?></small>
+        </div>
+        <div class="form-group">
+          <label for="level">level</label>
+          <input type="text" name="level" id="level" class="form-control">
+          <small class="muted text-danger"><?= form_error('level'); ?></small>
+        </div>
+        <div class="form-group">
+          <label for="password">password</label>
           <input type="password" name="password" id="password" class="form-control">
           <small class="muted text-danger"><?= form_error('password'); ?></small>
         </div>

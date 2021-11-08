@@ -18,6 +18,9 @@ class Users extends CI_Controller
 		$data['users'] = $this->User_m->get('users')->result_array();
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|trim');
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|max_length[12]');
+		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
+		$this->form_validation->set_rules('nohp', 'No hp', 'required|trim');
+		$this->form_validation->set_rules('level', 'level', 'required|trim');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|max_length[12]');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
@@ -28,7 +31,10 @@ class Users extends CI_Controller
 			$data = [
 				'username' => html_escape($this->input->post('username', true)),
 				'password' => html_escape(sha1($this->input->post('password', true))),
-				'nama_lengkap' => html_escape($this->input->post('nama', true))
+				'nama_lengkap' => html_escape($this->input->post('nama', true)),
+				'alamat' => html_escape($this->input->post('alamat', true)),
+				'nohp' => html_escape($this->input->post('nohp', true)),
+				'level' => html_escape($this->input->post('level', true))
 			];
 			$this->User_m->insert('users', $data);
 			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><i class="fas fa-info-circle"></i> Data User Berhasil Ditambahkan.</div>');
@@ -44,6 +50,9 @@ class Users extends CI_Controller
 		$data['title'] = 'Ubah Data User ' . $data['users']['username'];
 
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|trim');
+		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|max_length[12]');
+		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
+		$this->form_validation->set_rules('nohp', 'No hp', 'required|trim');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|max_length[12]');
 
 		if ($this->form_validation->run() == FALSE) {
@@ -60,8 +69,11 @@ class Users extends CI_Controller
 	{
 		$idUser = $this->input->post('id_user');
 		$data = [
+			'username' => html_escape($this->input->post('username', true)),
 			'password' => html_escape(sha1($this->input->post('password', true))),
-			'nama_lengkap' => html_escape($this->input->post('nama', true))
+			'nama_lengkap' => html_escape($this->input->post('nama', true)),
+			'alamat' => html_escape($this->input->post('alamat', true)),
+			'nohp' => html_escape($this->input->post('nohp', true))
 		];
 		$this->db->where('id_user', $idUser);
 		$this->User_m->update('users', $data);

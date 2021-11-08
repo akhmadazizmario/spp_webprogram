@@ -36,13 +36,15 @@
                         <input type="text" name="nohp" id="nohp" value="<?= $user['nohp']; ?>" class="form-control">
                         <small class="muted text-danger"><?= form_error('nohp'); ?></small>
                     </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                        <small class="muted text-danger"><?= form_error('password'); ?></small>
+                    </div>
 
                     <div class="form-group">
                         <a href="<?= base_url('siswa/profil'); ?>" class="btn btn-secondary">Kembali</a>
                         <button type="submit" class="btn btn-dark">Ubah</button>
-                        <a href="http://localhost/latihansppwebprogram/siswa/profil/changePassword/10" bgcolor="red">
-                            <font color="red">ubah password?klik disini
-                        </a></font>
                     </div>
                     <?= form_close(); ?>
                 </div>

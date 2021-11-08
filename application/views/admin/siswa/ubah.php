@@ -15,16 +15,16 @@
           </div>
           <div class="form-group">
             <label for="nama">Nama Siswa</label>
-            <input type="text" name="nama" id="nama" class="form-control"value="<?= $siswa['nama_siswa']; ?>">
+            <input type="text" name="nama" id="nama" class="form-control" value="<?= $siswa['nama_siswa']; ?>">
             <small class="muted text-danger"><?= form_error('nama'); ?></small>
           </div>
           <div class="form-group">
             <label for="kelas">kelas</label>
             <select name="kelas" id="kelas" class="form-control">
               <option value="">-- Pilih Kelas --</option>
-              <?php foreach($kelas as $k) : ?>
-                <?php if($k['kelas'] == $siswa['kelas']) : ?>
-                <option value="<?= $k['kelas']; ?>" selected><?= $k['kelas']; ?></option>
+              <?php foreach ($kelas as $k) : ?>
+                <?php if ($k['kelas'] == $siswa['kelas']) : ?>
+                  <option value="<?= $k['kelas']; ?>" selected><?= $k['kelas']; ?></option>
                 <?php else : ?>
                   <option value="<?= $k['kelas']; ?>"><?= $k['kelas']; ?></option>
                 <?php endif; ?>
@@ -48,6 +48,16 @@
             <small class="muted text-danger"><?= form_error('jatuh_tempo'); ?></small>
           </div>
           <div class="form-group">
+            <label for="alamat">alamat</label>
+            <input type="text" name="alamat" id="alamat" class="form-control" value="<?= $siswa['alamat']; ?>">
+            <small class="muted text-danger"><?= form_error('alamat'); ?></small>
+          </div>
+          <div class="form-group">
+            <label for="nohp">no.hp</label>
+            <input type="text" name="nohp" id="nohp" class="form-control" value="<?= $siswa['nohp']; ?>">
+            <small class="muted text-danger"><?= form_error('nohp'); ?></small>
+          </div>
+          <div class="form-group">
             <a href="<?= base_url('admin/siswa'); ?>" class="btn btn-secondary" data-dismiss="modal">Close</a>
             <button type="submit" class="btn btn-dark">Ubah</button>
           </div>
@@ -57,4 +67,3 @@
     </div>
   </div>
 </main>
-
