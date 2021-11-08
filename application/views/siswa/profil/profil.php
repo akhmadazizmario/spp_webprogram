@@ -79,7 +79,7 @@
                                                 <tr>
                                                     <td class="textt">nama sekolah</td>
                                                     <td>:</td>
-                                                    <td style="color: black; font-weight:bold">SMK N 1 JAKARTA</td>
+                                                    <td style="color: black; font-weight:bold">SMA N 1 JAKARTA</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="textt">username</td>
