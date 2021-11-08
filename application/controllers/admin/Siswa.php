@@ -29,6 +29,7 @@ class Siswa extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
+			$this->load->view('layout/topbar', $data);
 			$this->load->view('admin/siswa/index', $data);
 			$this->load->view('layout/footer');
 		} else {
@@ -119,6 +120,7 @@ class Siswa extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
+			$this->load->view('layout/topbar', $data);
 			$this->load->view('admin/siswa/ubah', $data);
 			$this->load->view('layout/footer');
 		} else {

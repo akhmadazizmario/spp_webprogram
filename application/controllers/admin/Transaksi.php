@@ -20,6 +20,7 @@ class Transaksi extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('layout/header', $data);
             $this->load->view('layout/sidebar', $data);
+            $this->load->view('layout/topbar', $data);
             $this->load->view('admin/transaksi/index', $data);
             $this->load->view('layout/footer');
         } else {
@@ -45,6 +46,7 @@ class Transaksi extends CI_Controller
         $data['spp'] = $this->Transaksi_m->get_where('spp', $where)->result_array();
         $this->load->view('layout/header', $data);
         $this->load->view('layout/sidebar', $data);
+        $this->load->view('layout/topbar', $data);
         $this->load->view('admin/transaksi/index', $data);
         $this->load->view('layout/footer');
     }

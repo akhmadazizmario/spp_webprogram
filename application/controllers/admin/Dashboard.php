@@ -15,8 +15,8 @@ class Dashboard extends CI_Controller
 		$data['title'] = 'Dashboard';
 		$data['user'] = $this->Auth_m->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
 		$this->load->view('layout/header', $data);
-		$this->load->view('layout/sidebar', $data);
+		$this->load->view('layout/sidebar');
+		$this->load->view('layout/topbar');
 		$this->load->view('admin/dashboard', $data);
-		$this->load->view('layout/footer');
 	}
 }

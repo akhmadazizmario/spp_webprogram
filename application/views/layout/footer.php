@@ -1,10 +1,23 @@
-</div>
-</div>
-<script src="<?= base_url('/assets/'); ?>js/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-<script src="<?= base_url('/assets/js/'); ?>dashboard.js"></script>
-<script src="<?= base_url('/assets/js/'); ?>myscript.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="http://localhost/phpmvc/assets/vendor/jquery/jquery.min.js"></script>
+<script src="http://localhost/phpmvc/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="http://localhost/phpmvc/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="http://localhost/phpmvc/assets/js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="http://localhost/phpmvc/assets/vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="http://localhost/phpmvc/assets/js/demo/chart-area-demo.js"></script>
+<script src="http://localhost/phpmvc/assets/js/demo/chart-pie-demo.js"></script>
+
 </body>
+<!----footer-------->
+<footer>
+</footer>
+
 </html>

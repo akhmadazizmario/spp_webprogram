@@ -53,7 +53,7 @@
                         <center><img class="img-profile rounded-circle" src="https://i.pinimg.com/originals/c1/94/32/c194329bae6d1f4fbe3890136d9fdb5f.png" width="130px" height="130px"></center>
                         <form class="form-signin" action="<?= base_url('auth2'); ?>" method="post">
                             <center>
-                                <h1 class="h3 mb-3 font-weight-normal">APLIKASI SPP SMA N 1 JAKARTA <h1>SISWA</h1>
+                                <h1 class="h3 mb-3 font-weight-normal">APLIKASI SPP SMA N 1 TEGAL <h1>SISWA</h1>
                                 </h1>
 
                                 <?= $this->session->flashdata('pesan'); ?>

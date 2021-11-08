@@ -20,8 +20,9 @@ class profil extends CI_Controller
         $this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|max_length[12]');
         $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|max_length[12]');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('layout/header', $data);
+            $this->load->view('layout/header2', $data);
             $this->load->view('layout/sidebar2', $data);
+            $this->load->view('layout/topbar2', $data);
             $this->load->view('siswa/profil/profil', $data);
             $this->load->view('layout/footer');
         } else {
@@ -47,8 +48,9 @@ class profil extends CI_Controller
         $this->form_validation->set_rules('nohp', 'nohp', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|max_length[12]');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('layout/header', $data);
+            $this->load->view('layout/header2', $data);
             $this->load->view('layout/sidebar2', $data);
+            $this->load->view('layout/topbar2', $data);
             $this->load->view('siswa/profil/ubah', $data);
             $this->load->view('layout/footer');
         } else {

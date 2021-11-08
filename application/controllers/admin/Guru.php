@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Guru extends CI_Controller {
+class Guru extends CI_Controller
+{
 	public function __construct()
 	{
 		parent::__construct();
@@ -16,9 +17,10 @@ class Guru extends CI_Controller {
 		$data['user'] = $this->Auth_m->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
 		$data['guru'] = $this->Guru_m->get('guru')->result_array();
 		$this->form_validation->set_rules('nama', 'Nama Guru', 'required|trim', ['required' => 'Nama guru wajib di isi!.']);
-		if($this->form_validation->run() == FALSE) {
+		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
+			$this->load->view('layout/topbar', $data);
 			$this->load->view('admin/guru/index', $data);
 			$this->load->view('layout/footer');
 		} else {
@@ -44,16 +46,15 @@ class Guru extends CI_Controller {
 		$data['guru'] = $this->Guru_m->get_where('guru', $where)->row_array();
 		$data['title'] = 'Ubah Data Guru ' . $data['guru']['nama_guru'];
 		$this->form_validation->set_rules('nama', 'Nama Guru', 'required|trim', ['required' => 'Nama guru wajib di isi!.']);
-		if($this->form_validation->run() == FALSE) {
+		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
+			$this->load->view('layout/topbar', $data);
 			$this->load->view('admin/guru/ubah', $data);
 			$this->load->view('layout/footer');
 		} else {
 			$this->ubahDataGuru();
-			
 		}
-
 	}
 
 	public function ubahDataGuru()
@@ -74,6 +75,4 @@ class Guru extends CI_Controller {
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><i class="fas fa-trash"></i> Data Guru Berhasil Dihapus.</div>');
 		redirect('admin/guru');
 	}
-
-
 }

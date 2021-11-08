@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Laporan extends CI_Controller {
+class Laporan extends CI_Controller
+{
 	public function __construct()
 	{
 		parent::__construct();
@@ -9,13 +10,14 @@ class Laporan extends CI_Controller {
 		$this->load->model('Transaksi_m');
 		cekSession();
 	}
-	
+
 	public function index()
 	{
 		$data['user'] = $this->Auth_m->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
 		$data['title'] = 'Laporan';
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
+		$this->load->view('layout/topbar', $data);
 		$this->load->view('admin/laporan/index', $data);
 		$this->load->view('layout/footer');
 	}
@@ -77,5 +79,4 @@ class Laporan extends CI_Controller {
 		$this->load->view('admin/laporan/laporan_tunggakan', $data);
 		$this->load->view('layout/footer');
 	}
-
 }

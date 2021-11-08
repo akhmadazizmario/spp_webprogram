@@ -54,7 +54,7 @@
             <form class="form-signin" action="<?= base_url('auth'); ?>" method="post">
               <center>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <h1 class="h3 mb-3 font-weight-normal">APLIKASI SPP SMA N 1 JAKARTA <h1>ADMIN</h1>
+                  <h1 class="h3 mb-3 font-weight-normal">APLIKASI SPP SMA N 1 TEGAL <h1>ADMIN</h1>
                   </h1>
 
                   <?= $this->session->flashdata('pesan'); ?>

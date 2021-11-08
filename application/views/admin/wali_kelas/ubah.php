@@ -7,31 +7,39 @@
       <button type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#formModalWali">
         <i class="fas fa-plus"></i> Tambah Data Wali Kelas
       </button>
-      <?php if(validation_errors()) : ?>
+      <?php if (validation_errors()) : ?>
         <div class="alert alert-danger" role="alert"><?= validation_errors(); ?></div>
       <?php endif; ?>
       <?= $this->session->flashdata('pesan'); ?>
     </div>
   </div>
   <div class="card">
-    <div class="card-body">
+    <div class="card-body bg-success">
       <div class="row">
         <div class="col-md">
-          
+
           <?= form_open('admin/wali/ubahDataWali'); ?>
-          <input type="hidden" name="kelas" id="kelas" value="<?= $guruWali['kelas']; ?>">
           <div class="form-group">
-            <label for="kelas">Kelas</label>
-            <input type="text" name="kelas" id="kelas" class="form-control" value="<?= $guruWali['kelas']; ?>" readonly>
+            <label for="kelas">kelas</label>
+            <select name="kelas" id="kelas" class="form-control">
+              <option value="">-- Pilih kelas --</option>
+              <?php foreach ($guruWali as $g) : ?>
+                <?php if ($g['kelas'] == $guru['kelas']) : ?> XII IPA
+                  <option value="<?= $g['kelas']; ?>" selected><?= $g['kelas']; ?></option>
+                <?php else : ?>
+                  <option value="<?= $g['kelas']; ?>"><?= $g['kelas']; ?></option>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </select>
             <small class="muted text-danger"><?= form_error('kelas'); ?></small>
           </div>
           <div class="form-group">
             <label for="nama">Nama Guru</label>
             <select name="nama" id="nama" class="form-control">
               <option value="">-- Pilih Guru --</option>
-              <?php foreach($guru as $g) : ?>
-                <?php if($g['id_guru'] == $guruWali['id_guru']) : ?>
-                <option value="<?= $g['id_guru']; ?>" selected><?= $g['nama_guru']; ?></option>
+              <?php foreach ($guru as $g) : ?>
+                <?php if ($g['id_guru'] == $guruWali['id_guru']) : ?>
+                  <option value="<?= $g['id_guru']; ?>" selected><?= $g['nama_guru']; ?></option>
                 <?php else : ?>
                   <option value="<?= $g['id_guru']; ?>"><?= $g['nama_guru']; ?></option>
                 <?php endif; ?>

@@ -17,7 +17,7 @@ class Transaksi extends CI_Controller
 
 		$this->form_validation->set_rules('nis', 'NIS', 'required|trim', ['required' => ' wajib di isi!.']);
 		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('layout/header', $data);
+			$this->load->view('layout/header2', $data);
 			$this->load->view('layout/sidebar2', $data);
 			$this->load->view('siswa/transaksi/transaksi', $data);
 			$this->load->view('layout/footer');
@@ -44,6 +44,7 @@ class Transaksi extends CI_Controller
 		$data['spp'] = $this->Transaksi2_m->get_where('spp', $where)->result_array();
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar2', $data);
+		$this->load->view('layout/topbar2', $data);
 		$this->load->view('siswa/transaksi/transaksi', $data);
 		$this->load->view('layout/footer');
 	}

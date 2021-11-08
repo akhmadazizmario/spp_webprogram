@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="card">
-    <div class="card-body">
+    <div class="card-body bg-success">
       <div class="row">
         <div class="col-md">
           <?= form_open('admin/guru/ubahDataGuru'); ?>

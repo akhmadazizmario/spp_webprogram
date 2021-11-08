@@ -1,49 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Jekyll v4.1.1">
-  <title><?= $title; ?></title>
-  <link rel="icon" type="image/png" href="https://www.pinclipart.com/picdir/big/402-4023169_free-download-logo-kampus-universitas-format-png-.png">
 
-  <!-- Bootstrap core CSS -->
-  <link href="<?= base_url('/assets/'); ?>css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?= base_url('/assets/'); ?>css/dashboard.css" rel="stylesheet">
-  <link href="<?= base_url('/assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
-  <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-  <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
-  <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#563d7c">
+    <title>SPP Admin - Dashboard</title>
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/c1/94/32/c194329bae6d1f4fbe3890136d9fdb5f.png">
 
+    <!-- Custom fonts for this template-->
+    <link href="http://localhost/phpmvc/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
+    <!-- Custom styles for this template-->
+    <link href="http://localhost/phpmvc/assets/css/sb-admin-2.min.css" rel="stylesheet">
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-  <!-- Custom styles for this template -->
-  <link href="dashboard.css" rel="stylesheet">
 </head>
 
-<body background="https://baradesain.files.wordpress.com/2021/03/tut-wuri-handayani-logo-featured-03.jpg">
+<body id="page-top" background="">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
