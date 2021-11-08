@@ -17,6 +17,10 @@ class Siswa_m extends CI_Model
 	{
 		$this->db->insert($table, $data);
 	}
+	public function getSiswaById($id)
+	{
+		return $this->db->get_where('siswa', ['id_siswa' => $id])->row_array();
+	}
 
 	public function update($table, $data)
 	{
@@ -26,5 +30,13 @@ class Siswa_m extends CI_Model
 	public function getGuruId($idGuru)
 	{
 		return $this->db->get_where('guru', $idGuru)->row_array();
+	}
+	public function cariDataSiswa()
+	{
+		$keyword = $this->input->post('keyword', true);
+		$this->db->or_like('nama_siswa', $keyword);
+		$this->db->or_like('nis', $keyword);
+		$this->db->or_like('username', $keyword);
+		return $this->db->get('siswa')->result_array();
 	}
 }

@@ -16,6 +16,9 @@ class Users extends CI_Controller
 		$data['title'] = 'Users';
 		$data['user'] = $this->Auth_m->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
 		$data['users'] = $this->User_m->get('users')->result_array();
+		if ($this->input->post('keyword')) {
+			$data['users'] = $this->User_m->cariDataUser();
+		}
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|trim');
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|max_length[12]');
 		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
@@ -41,6 +44,16 @@ class Users extends CI_Controller
 			$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><i class="fas fa-info-circle"></i> Data User Berhasil Ditambahkan.</div>');
 			redirect('admin/users');
 		}
+	}
+	public function detail($id)
+	{
+		$data['judul'] = "Detail User";
+		$data['user'] = $this->User_m->getUserById($id);
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/sidebar', $data);
+		$this->load->view('layout/topbar', $data);
+		$this->load->view('admin/users/detail', $data);
+		$this->load->view('layout/footer');
 	}
 
 	public function ubahUser($id)

@@ -17,6 +17,10 @@ class User_m extends CI_Model
 	{
 		$this->db->insert($table, $data);
 	}
+	public function getUserById($id)
+	{
+		return $this->db->get_where('users', ['id_user' => $id])->row_array();
+	}
 
 	public function update($table, $data)
 	{
@@ -26,5 +30,13 @@ class User_m extends CI_Model
 	public function getGuruId($idGuru)
 	{
 		return $this->db->get_where('guru', $idGuru)->row_array();
+	}
+	public function cariDataUser()
+	{
+		$keyword = $this->input->post('keyword', true);
+		$this->db->or_like('nama_lengkap', $keyword);
+		$this->db->or_like('username', $keyword);
+		$this->db->or_like('alamat', $keyword);
+		return $this->db->get('users')->result_array();
 	}
 }

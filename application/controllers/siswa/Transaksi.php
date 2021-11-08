@@ -19,6 +19,7 @@ class Transaksi extends CI_Controller
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header2', $data);
 			$this->load->view('layout/sidebar2', $data);
+			$this->load->view('layout/topbar2', $data);
 			$this->load->view('siswa/transaksi/transaksi', $data);
 			$this->load->view('layout/footer');
 		} else {

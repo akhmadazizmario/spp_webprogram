@@ -4,7 +4,7 @@
      <!-- Sidebar - Brand -->
      <a class="sidebar-brand d-flex align-items-center justify-content-center">
          <img class="img-profile rounded-circle" src="https://i.pinimg.com/originals/c1/94/32/c194329bae6d1f4fbe3890136d9fdb5f.png" width="50px" height="50px">
-         <div class="sidebar-brand-text mx-3">Admin <sup></sup></div>
+         <div class="sidebar-brand-text mx-3">SMA N 1 TEGAL <sup></sup></div>
      </a>
 
      <!-- Divider -->
