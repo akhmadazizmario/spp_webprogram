@@ -12,7 +12,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link<?= $this->uri->segment(2) == 'dashboard' ? ' active' : '' ?>" href="<?= base_url('admin/dashboard'); ?>">
+        <a class="nav-link<?= $this->uri->segment(2) == 'dashboard' ? ' active' : '' ?>" href="<?= base_url('siswa/dashboard'); ?>">
             <i class="fas fa-fw fa-tachometer-alt" style='font-size:20px;'></i>
             <span>Dashboard</span></a>
     </li>
