@@ -13,7 +13,7 @@ header("Content-Disposition: attachment; filename=data_pemabayaran.xls");
 	<div class="row">
 		<div class="col-md">
 			<div class="card">
-				<h4 class="text-center">SMA N 1 JAKARTA</h4>
+				<h4 class="text-center">SMA N 1 TEGAL</h4>
 				<small class="text-center">Laporan Pembayaran</small>
 				<p class="ml-2">Dari Tanggal : <?= date('d-m-Y', strtotime($mulaiTgl)); ?><br>
 					Sampai Tanggal : <?= date('d-m-Y', strtotime($sampaiTgl)); ?>

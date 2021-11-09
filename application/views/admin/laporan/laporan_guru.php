@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-md">
 			<div class="card">
-				<h4 class="text-center bg-warning">SMA N 1 JAKARTA</h4>
+				<h4 class="text-center bg-warning">SMA N 1 TEGAL</h4>
 				<small class="text-center bg-light">Laporan Guru</small>
 				<table class="table table-bordered bg-light">
 					<tr>
@@ -35,7 +35,7 @@
 							<tr>
 								<td></td>
 								<td>
-									<p>JAKARTA, DKI JAKARTA <?= date('d-m-Y'); ?><br>
+									<p>TEGAL, JAWA TENGAH <?= date('d-m-Y'); ?><br>
 										ADMIN</p>
 									<br><br>
 									<p>_______________________</p>

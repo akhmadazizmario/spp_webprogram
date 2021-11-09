@@ -17,7 +17,7 @@
                 </h1>
                 <hr>
                 <h2 class="display-10">nis : <?= $user['nis']; ?></h2>
-                <p class="lead">Aplikasi Pembayaran SPP Sekolah Sederhana SMA N 1 JAKARTA</p>
+                <p class="lead">Aplikasi Pembayaran SPP Sekolah Sederhana SMA N 1 TEGAL</p>
             </div>
         </div>
         </main>

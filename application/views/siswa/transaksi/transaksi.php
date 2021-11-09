@@ -90,7 +90,6 @@
                                             <?php if ($s['no_bayar'] == null) : ?>
                                                 <a href="<?= base_url('siswa/transaksi/bayar/' . $siswa['nis'] . '/' . $s['id_spp']); ?>" class="btn btn-primary btn-sm">Bayar</a>
                                             <?php else : ?>
-                                                <a href="<?= base_url('siswa/transaksi/batal/' . $siswa['nis'] . '/' . $s['id_spp']); ?>" class="btn btn-danger btn-sm">Batal</a>
                                                 <a href="<?= base_url('siswa/transaksi/cetak/' . $siswa['nis'] . '/' . $s['id_spp']); ?>" target="_blank" class="btn btn-sm">Cetak</a>
                                             <?php endif; ?>
                                         </td>

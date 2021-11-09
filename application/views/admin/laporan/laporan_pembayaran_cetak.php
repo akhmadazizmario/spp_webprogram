@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-md">
 			<div class="card">
-				<h4 class="text-center">SMA N 1 JAKARTA</h4>
+				<h4 class="text-center">SMA N 1 TEGAL</h4>
 				<small class="text-center">Laporan Pembayaran</small>
 				<div class="row">
 					<div class="col-md-4">
@@ -57,7 +57,7 @@
 							<tr>
 								<td></td>
 								<td>
-									<p>JAKARTA, DKI JAKARTA <?= date('d-m-Y'); ?><br>
+									<p>TEGAL, JAWA TENGAH <?= date('d-m-Y'); ?><br>
 										ADMIN</p>
 									<br><br>
 									<p>_______________________</p>

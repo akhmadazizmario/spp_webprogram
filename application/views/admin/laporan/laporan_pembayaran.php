@@ -9,7 +9,7 @@
 	<div class="row">
 		<div class="col-md">
 			<div class="card">
-				<h4 class="text-center">SMA N 1 JAKARTA</h4>
+				<h4 class="text-center">SMA N 1 TEGAL</h4>
 				<small class="text-center">Laporan Pembayaran</small>
 				<p class="ml-2">Dari Tanggal : <?= date('d-m-Y', strtotime($mulaiTgl)); ?><br>
 					Sampai Tanggal : <?= date('d-m-Y', strtotime($sampaiTgl)); ?>
@@ -59,8 +59,8 @@
 							<tr>
 								<td></td>
 								<td>
-									<p>JAKARTA, DKI JAKARTA <?= date('d-m-Y'); ?><br>
-										Operator</p>
+									<p>TEGAL, JAWA TENGAH <?= date('d-m-Y'); ?><br>
+										ADMIN</p>
 									<br><br>
 									<p>_______________________</p>
 								</td>

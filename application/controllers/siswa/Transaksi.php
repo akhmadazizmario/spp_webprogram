@@ -75,19 +75,6 @@ class Transaksi extends CI_Controller
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><i class="fas fa-info-circle"></i> NIS <strong>' . $nis . '</strong> Berhasil Di Bayar.</div>');
 		redirect('siswa/transaksi');
 	}
-	public function batal($nis, $idSpp)
-	{
-		$where = ['id_spp' => $idSpp];
-		$data = [
-			'no_bayar' => null,
-			'tgl_bayar' => null,
-			'ket' => 'Belum Lunas'
-		];
-		$this->Transaksi2_m->update_where('spp', $data, $where);
-		$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><i class="fas fa-info-circle"></i> NIM <strong>' . $nis . '</strong> SPP Berhasil Di Bayar.</div>');
-		redirect('siswa/transaksi');
-	}
-
 	public function cetak($nis, $idSpp)
 	{
 		$where = ['nis' => $nis];
@@ -96,7 +83,7 @@ class Transaksi extends CI_Controller
 		$where = ['id_spp' => $idSpp];
 		$data['bayar'] = $this->Transaksi2_m->get_join_where('spp', $where)->result_array();
 		$this->load->view('layout/header', $data);
-		$this->load->view('', $data);
+		$this->load->view('siswa/laporan/laporan_pembayaran_cetak', $data);
 		$this->load->view('layout/footer');
 	}
 }
