@@ -1,6 +1,5 @@
 <div class="container">
   <h1 class="h2"><?= $title; ?></h1>
-  <hr>
   <div class="row mb-2">
     <div class="col-md-6">
       <?= $this->session->flashdata('pesan'); ?>
@@ -80,7 +79,7 @@
                 <td><?= $s['ket']; ?></td>
                 <td>
                   <?php if ($s['no_bayar'] == null) : ?>
-                    <a href="http://localhost/latihansppwebprogram/siswa/transaksi/bayar/<?= $s['id_spp']; ?>" class="btn btn-primary">bayar</a>
+                    <a href="<?= base_url('/admin/transaksi/bayar/' . $siswa['nis'] . '/' . $s['id_spp']); ?>" class="btn btn-info">Bayar</a>
                   <?php else : ?>
                     <a href="<?= base_url('admin/transaksi/batal/' . $siswa['nis'] . '/' . $s['id_spp']); ?>" class="btn btn-danger btn-sm">Batal</a>
                     <a href="<?= base_url('admin/transaksi/cetak/' . $siswa['nis'] . '/' . $s['id_spp']); ?>" target="_blank" class="btn btn-sm">Cetak</a>
@@ -97,4 +96,4 @@
 
 </div>
 </div>
-</main>
+</div>
