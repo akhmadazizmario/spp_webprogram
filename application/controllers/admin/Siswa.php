@@ -18,21 +18,14 @@ class Siswa extends CI_Controller
 		$data['user'] = $this->Auth_m->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
 		$data['siswa'] = $this->Siswa_m->get('siswa')->result_array();
 		$data['kelas'] = $this->Wali_m->get('wali_kelas')->result_array();
-		if ($this->input->post('keyword')) {
-			$data['siswa'] = $this->Siswa_m->cariDataSiswa();
-		}
 		$this->form_validation->set_rules('nama', 'Nama Siswa', 'required|trim', ['required' => 'Nama Siswa wajib di isi!.']);
 		$this->form_validation->set_rules('kelas', 'Kelas', 'required|trim', ['required' => 'Kelas wajib di isi!.']);
 		$this->form_validation->set_rules('nis', 'NIS', 'required|trim', ['required' => 'NIS wajib di isi!.']);
 		$this->form_validation->set_rules('tahun_ajaran', 'Tahun Ajaran', 'required|trim', ['required' => 'Tahun Ajaran wajib di isi!.']);
 		$this->form_validation->set_rules('biaya', 'Biaya', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
-		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim', ['required' => 'alamat wajib di isi!.']);
-		$this->form_validation->set_rules('nohp', 'nohp', 'required|trim', ['required' => 'nohp wajib di isi!.']);
-		$this->form_validation->set_rules('password', 'password', 'required|trim', ['required' => 'password wajib di isi!.']);
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
-			$this->load->view('layout/topbar', $data);
 			$this->load->view('admin/siswa/index', $data);
 			$this->load->view('layout/footer');
 		} else {
@@ -42,9 +35,6 @@ class Siswa extends CI_Controller
 				'nama_siswa' => html_escape($this->input->post('nama', true)),
 				'kelas' => html_escape($this->input->post('kelas', true)),
 				'tahun_ajaran' => html_escape($this->input->post('tahun_ajaran', true)),
-				'alamat' => html_escape($this->input->post('alamat', true)),
-				'nohp' => html_escape($this->input->post('nohp', true)),
-				'password' => html_escape($this->input->post('password', true)),
 				'biaya' => $biaya
 			];
 
@@ -101,7 +91,6 @@ class Siswa extends CI_Controller
 			redirect('admin/siswa');
 		}
 	}
-
 	public function lihat($id)
 	{
 		$data['judul'] = "Detail Siswa";
@@ -111,6 +100,7 @@ class Siswa extends CI_Controller
 		$this->load->view('admin/siswa/lihat', $data);
 		$this->load->view('layout/footer');
 	}
+
 	public function ubahSiswa($id)
 	{
 		$data['user'] = $this->Auth_m->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
@@ -121,18 +111,13 @@ class Siswa extends CI_Controller
 
 		// Rules Form
 		$this->form_validation->set_rules('nama', 'Nama Siswa', 'required|trim', ['required' => 'Nama Siswa wajib di isi!.']);
-		$this->form_validation->set_rules('username', 'username', 'required|trim', ['required' => 'username wajib di isi!.']);
 		$this->form_validation->set_rules('kelas', 'Kelas', 'required|trim', ['required' => 'Kelas wajib di isi!.']);
 		$this->form_validation->set_rules('nis', 'NIS', 'required|trim', ['required' => 'NIS wajib di isi!.']);
 		$this->form_validation->set_rules('tahun_ajaran', 'Tahun Ajaran', 'required|trim', ['required' => 'Tahun Ajaran wajib di isi!.']);
 		$this->form_validation->set_rules('biaya', 'Biaya', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
-		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim', ['required' => 'alamat wajib di isi!.']);
-		$this->form_validation->set_rules('nohp', 'nohp', 'required|trim', ['required' => 'nohp wajib di isi!.']);
-		$this->form_validation->set_rules('password', 'password', 'required|trim', ['required' => 'nohp wajib di isi!.']);
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
-			$this->load->view('layout/topbar', $data);
 			$this->load->view('admin/siswa/ubah', $data);
 			$this->load->view('layout/footer');
 		} else {
@@ -146,13 +131,9 @@ class Siswa extends CI_Controller
 		$data = [
 			'nis' => html_escape($this->input->post('nis', true)),
 			'nama_siswa' => html_escape($this->input->post('nama', true)),
-			'username' => html_escape($this->input->post('username', true)),
 			'kelas' => html_escape($this->input->post('kelas', true)),
 			'tahun_ajaran' => html_escape($this->input->post('tahun_ajaran', true)),
-			'biaya' => html_escape($this->input->post('biaya', true)),
-			'alamat' => html_escape($this->input->post('alamat', true)),
-			'nohp' => html_escape($this->input->post('nohp', true)),
-			'password' => html_escape($this->input->post('password', true))
+			'biaya' => html_escape($this->input->post('biaya', true))
 		];
 		$this->db->where('id_siswa', $idSiswa);
 		$this->Siswa_m->update('siswa', $data);
