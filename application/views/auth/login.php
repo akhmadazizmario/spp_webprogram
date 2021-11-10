@@ -22,69 +22,84 @@
   <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
   <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
   <meta name="theme-color" content="#563d7c">
-
-
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+  <style type="text/css">
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #eee;
     }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 100%;
       }
     }
   </style>
-  <!-- Custom styles for this template -->
-  <link href="signin.css" rel="stylesheet">
 </head>
-
-<body background="https://fashionsista.co/wallpaper/wallpaper/20210515/unduh-400-koleksi-background-warna-biru-muda-hd-paling-preview.jpg">
-  <div class="container py-5">
-    <div class="row py-5">
-      <div class="col-md-4 offset-md-4 py-5">
-        <div class="card-body bg-light">
-          <div class="table-responsive">
-            <center><img class="img-profile rounded-circle" src="https://i.pinimg.com/originals/c1/94/32/c194329bae6d1f4fbe3890136d9fdb5f.png" width="130px" height="130px"></center>
-            <form class="form-signin" action="<?= base_url('auth'); ?>" method="post">
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form class="form-signin" action="<?= base_url('auth'); ?>" method="post">
+          <div>
+            <?= $this->session->flashdata('pesan'); ?>
+            <p class="lead fw-normal mb-0 me-3">
               <center>
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <h1 class="h3 mb-3 font-weight-normal">APLIKASI SPP SMA N 1 TEGAL <h1>ADMIN</h1>
-                  </h1>
-
-                  <?= $this->session->flashdata('pesan'); ?>
-                  <div class="form-group">
-                    <label for="username" class="sr-only">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" placeholder="username" autofocus>
-                    <small class="muted text-danger"><?= form_error('username'); ?></small>
-                  </div>
-                  <div class="form-group">
-                    <label for="password" class="sr-only">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-                    <small class="muted text-danger"><?= form_error('password'); ?></small>
-                  </div>
-                  <div class="form-group">
-                    <button class="btn btn-lg btn-success btn-block" type="submit">Masuk</button>
-                  </div>
-                </table>
+                <h3>LOGIN ADMIN<br> SMA N 1 TEGAL</h3>
+              </center>
+              <center><img class="img-profile rounded-circle" src="https://i.pinimg.com/originals/c1/94/32/c194329bae6d1f4fbe3890136d9fdb5f.png" width="90px" height="90px"></center>
+            </p>
           </div>
-          </form>
-        </div>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0">login admin</p>
+          </div>
+
+          <!-- username input -->
+          <div class="form-group">
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" name="username" id="username" class="form-control" placeholder="username" autofocus>
+            <small class="muted text-danger"><?= form_error('username'); ?></small>
+          </div>
+
+          <!-- Password input -->
+          <div class="form-group">
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+            <small class="muted text-danger"><?= form_error('password'); ?></small>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+          </div>
+
+
+        </form>
+        <br>
+        <hr>
+        <center>
+          <h6><a href="http://localhost/latihansppwebprogram/auth2">
+              <font color="red">login Siswa klik disini
+            </a></font>
+          </h6>
+          <hr>
       </div>
     </div>
-    <hr>
-    <center>
-      <h4><a href="http://localhost/latihansppwebprogram/auth2" bgcolor="red">
-          <font color="red">login siswa klik disini
-        </a></font>
-      </h4>
-      <hr>
-
-</body>
-
-</html>
+  </div>
+  <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2021. All rights reserved.
+    </div>
+    <!-- Copyright ->
+    </div>
+</section>

@@ -6,9 +6,6 @@
       <button type="button" class="btn btn-danger mb-2" data-toggle="modal" data-target="#formModalSiswa">
         <i class="fas fa-plus"></i> Tambah Data Siswa
       </button>
-      <?php if (validation_errors()) : ?>
-        <div class="alert alert-danger" role="alert"><?= validation_errors(); ?></div>
-      <?php endif; ?>
       <?= $this->session->flashdata('pesan'); ?>
     </div>
   </div>
@@ -145,3 +142,7 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,9 +6,21 @@
          <img class="img-profile rounded-circle" src="https://i.pinimg.com/originals/c1/94/32/c194329bae6d1f4fbe3890136d9fdb5f.png" width="50px" height="50px">
          <div class="sidebar-brand-text mx-3">SMA N 1 TEGAL <sup></sup></div>
      </a>
-
      <!-- Divider -->
-     <hr class="sidebar-divider my-0">
+     <hr class="sidebar-divider">
+
+     <!-- Sidebar user panel -->
+     <!-- Nav Item - User Information -->
+     <li class="nav-item dropdown no-arrow">
+         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <img src="https://pbs.twimg.com/profile_images/415455963278106625/pLe3KVEf_400x400.jpeg" width="50px">
+             <span class="mr-2 d-none d-lg-inline text-black-600 small text-white"> <?= $user['nama_lengkap']; ?></span><br>
+             <span class="mr-2 d-none d-lg-inline text-black-600 small text-white"><i class="fa fa-circle text-success"></i> Online</span>
+         </a>
+     </li>
+     <!-- Divider -->
+     <hr class="sidebar-divider">
+
 
      <!-- Nav Item - Dashboard -->
      <li class="nav-item active">

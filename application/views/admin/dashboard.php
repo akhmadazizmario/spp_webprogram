@@ -1,6 +1,6 @@
 <div class="container ">
-    <div class="card shadow mb-4">
-        <div class="card-header py-3 bg-white">
+    <div class="card shadow mb-4 bg-success">
+        <div class="card-header py-3 ">
             <h1 class="h2">Dashboard Admin</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group mr-2 ">

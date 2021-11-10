@@ -57,4 +57,8 @@
                             </div>
                         </div>
                     </div>
-                    </main>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

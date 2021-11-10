@@ -93,6 +93,7 @@
     </div>
     <!-- /Spp Siswa -->
   <?php endif; ?>
+</div>
 
 </div>
 </div>

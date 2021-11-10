@@ -67,6 +67,7 @@ class Users extends CI_Controller
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|max_length[12]');
 		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
 		$this->form_validation->set_rules('nohp', 'No hp', 'required|trim');
+		$this->form_validation->set_rules('level', 'level', 'required|trim');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|max_length[12]');
 
 		if ($this->form_validation->run() == FALSE) {
@@ -88,7 +89,8 @@ class Users extends CI_Controller
 			'password' => html_escape(sha1($this->input->post('password', true))),
 			'nama_lengkap' => html_escape($this->input->post('nama', true)),
 			'alamat' => html_escape($this->input->post('alamat', true)),
-			'nohp' => html_escape($this->input->post('nohp', true))
+			'nohp' => html_escape($this->input->post('nohp', true)),
+			'level' => html_escape($this->input->post('level', true))
 		];
 		$this->db->where('id_user', $idUser);
 		$this->User_m->update('users', $data);

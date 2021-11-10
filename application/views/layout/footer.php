@@ -18,6 +18,11 @@
 </body>
 <!----footer-------->
 <footer>
+    <div>
+        <center>
+            Copyright © 2021. All rights reserved.
+            <!------END footer----->
+    </div>
 </footer>
 
 </html>

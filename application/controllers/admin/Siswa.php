@@ -18,6 +18,9 @@ class Siswa extends CI_Controller
 		$data['user'] = $this->Auth_m->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
 		$data['siswa'] = $this->Siswa_m->get('siswa')->result_array();
 		$data['kelas'] = $this->Wali_m->get('wali_kelas')->result_array();
+		if ($this->input->post('keyword')) {
+			$data['siswa'] = $this->Siswa_m->cariDataSiswa();
+		}
 		$this->form_validation->set_rules('nama', 'Nama Siswa', 'required|trim', ['required' => 'Nama Siswa wajib di isi!.']);
 		$this->form_validation->set_rules('username', 'username', 'required|trim', ['required' => 'Nama Siswa wajib di isi!.']);
 		$this->form_validation->set_rules('kelas', 'Kelas', 'required|trim', ['required' => 'Kelas wajib di isi!.']);

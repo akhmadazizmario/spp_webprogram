@@ -20,4 +20,5 @@
                 <p class="lead">Aplikasi Pembayaran SPP Sekolah Sederhana SMA N 1 TEGAL</p>
             </div>
         </div>
-        </main>
+    </div>
+</div>
