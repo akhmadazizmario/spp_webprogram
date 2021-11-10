@@ -136,6 +136,7 @@
                                     <div class=""></div>
                                 </div>
                                 <div class="chart-js-size-monitor-shrink">
+                                    <img src="https://www.jojonomic.com/wp-content/uploads/2020/12/11-1-1024x541.jpg" width="620px">
                                     <div class=""></div>
                                 </div>
                                 <canvas id="myAreaChart" width="669" height="320" class="chart-js-render-monitor" style="display: block; width: 669px; height:320px;"></canvas>
@@ -167,6 +168,7 @@
                     <!-- Card Body -->
                     <div class="card-body">
                         <div class="chart-pie pt-4 pb-2">
+                            <img src="https://1.bp.blogspot.com/-I8Dub9F-0Ao/WoEX95uukVI/AAAAAAAAAZk/ok9tCyKtM1QanXpMoMAb8ink6SgkP81tgCLcBGAs/s1600/diagram_lingkaran.jpg" width="300px">
                             <canvas id="myPieChart"></canvas>
                         </div>
                         <div class="mt-4 text-center small">
@@ -177,7 +179,7 @@
                                 <i class="fas fa-circle text-success"></i> Social
                             </span>
                             <span class="mr-2">
-                                <i class="fas fa-circle text-info"></i> Referral
+                                <i class="fas fa-circle text-warning"></i> Referral
                             </span>
                         </div>
                     </div>
