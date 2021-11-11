@@ -34,7 +34,7 @@
                             <div class="mb-4">
                                 <?= $this->session->flashdata('pesan'); ?>
                                 <center>
-                                    <h3>LOGIN ADMIN <br><strong>SMA N 1 TEGAL</strong></h3>
+                                    <h3>LOGIN SISWA <br><strong>SMA N 1 TEGAL</strong></h3>
                                 </center>
                                 <center><img class="img-profile rounded-circle" src="https://i.pinimg.com/originals/c1/94/32/c194329bae6d1f4fbe3890136d9fdb5f.png" width="90px" height="90px"></center>
                             </div>
@@ -67,7 +67,7 @@
                                     </a>
                                 </div><br>
                                 <h6><a href="http://localhost/latihansppwebprogram/auth">
-                                        <font color="red">login Siswa klik disini
+                                        <font color="red">login Admin klik disini
                                     </a></font>
                             </form>
                         </div>
