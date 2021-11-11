@@ -9,19 +9,6 @@
      <!-- Divider -->
      <hr class="sidebar-divider">
 
-     <!-- Sidebar user panel -->
-     <!-- Nav Item - User Information -->
-     <li class="nav-item dropdown no-arrow">
-         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <img src="https://pbs.twimg.com/profile_images/415455963278106625/pLe3KVEf_400x400.jpeg" width="50px">
-             <span class="mr-2 d-none d-lg-inline text-black-600 small text-white"> <?= $user['nama_lengkap']; ?></span><br>
-             <span class="mr-2 d-none d-lg-inline text-black-600 small text-white"><i class="fa fa-circle text-success"></i> Online</span>
-         </a>
-     </li>
-     <!-- Divider -->
-     <hr class="sidebar-divider">
-
-
      <!-- Nav Item - Dashboard -->
      <li class="nav-item active">
          <a class="nav-link<?= $this->uri->segment(2) == 'dashboard' ? ' active' : '' ?>" href="<?= base_url('admin/dashboard'); ?>">
@@ -40,7 +27,7 @@
      <li class="nav-item">
          <a class="nav-link<?= $this->uri->segment(2) == 'users' ? ' active' : '' ?>" href="<?= base_url('admin/users'); ?>">
              <i class="fas fa-users"></i>
-             Data Users
+             Data Admin
          </a>
      </li>
      <li class="nav-item">

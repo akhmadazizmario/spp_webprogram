@@ -55,7 +55,6 @@ class Users extends CI_Controller
 		$this->load->view('admin/users/detail', $data);
 		$this->load->view('layout/footer');
 	}
-
 	public function ubahUser($id)
 	{
 		$data['user'] = $this->Auth_m->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
@@ -65,15 +64,13 @@ class Users extends CI_Controller
 
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required|trim');
 		$this->form_validation->set_rules('username', 'Username', 'required|trim|min_length[4]|max_length[12]');
-		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
-		$this->form_validation->set_rules('nohp', 'No hp', 'required|trim');
-		$this->form_validation->set_rules('level', 'level', 'required|trim');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[3]|max_length[12]');
+		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim');
+		$this->form_validation->set_rules('nohp', 'nohp', 'required|trim');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
-			$this->load->view('layout/topbar', $data);
 			$this->load->view('admin/users/ubah', $data);
 			$this->load->view('layout/footer');
 		} else {
@@ -89,14 +86,14 @@ class Users extends CI_Controller
 			'password' => html_escape(sha1($this->input->post('password', true))),
 			'nama_lengkap' => html_escape($this->input->post('nama', true)),
 			'alamat' => html_escape($this->input->post('alamat', true)),
-			'nohp' => html_escape($this->input->post('nohp', true)),
-			'level' => html_escape($this->input->post('level', true))
+			'nohp' => html_escape($this->input->post('nohp', true))
 		];
 		$this->db->where('id_user', $idUser);
 		$this->User_m->update('users', $data);
 		$this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert"><i class="fas fa-info-circle"></i> Data User Berhasil Diubah.</div>');
 		redirect('admin/users');
 	}
+
 
 	public function hapus($id)
 	{

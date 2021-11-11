@@ -29,7 +29,7 @@ class Siswa extends CI_Controller
 		$this->form_validation->set_rules('biaya', 'Biaya', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
 		$this->form_validation->set_rules('alamat', 'alamat', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
 		$this->form_validation->set_rules('nohp', 'nohp', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
-		$this->form_validation->set_rules('password', 'password', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
+		$this->form_validation->set_rules('password', 'password', 'required|trim', ['required' => 'password wajib di isi!.']);
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
@@ -108,7 +108,6 @@ class Siswa extends CI_Controller
 		$data['judul'] = "Detail Siswa";
 		$data['siswa'] = $this->Siswa_m->getSiswaById($id);
 		$this->load->view('layout/header', $data);
-		$this->load->view('layout/sidebar', $data);
 		$this->load->view('admin/siswa/lihat', $data);
 		$this->load->view('layout/footer');
 	}
@@ -127,6 +126,7 @@ class Siswa extends CI_Controller
 		$this->form_validation->set_rules('nis', 'NIS', 'required|trim', ['required' => 'NIS wajib di isi!.']);
 		$this->form_validation->set_rules('tahun_ajaran', 'Tahun Ajaran', 'required|trim', ['required' => 'Tahun Ajaran wajib di isi!.']);
 		$this->form_validation->set_rules('biaya', 'Biaya', 'required|trim', ['required' => 'Biaya wajib di isi!.']);
+		$this->form_validation->set_rules('nohp', 'nohp', 'required|trim', ['required' => 'nohp wajib di isi!.']);
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('layout/header', $data);
 			$this->load->view('layout/sidebar', $data);
@@ -145,7 +145,8 @@ class Siswa extends CI_Controller
 			'nama_siswa' => html_escape($this->input->post('nama', true)),
 			'kelas' => html_escape($this->input->post('kelas', true)),
 			'tahun_ajaran' => html_escape($this->input->post('tahun_ajaran', true)),
-			'biaya' => html_escape($this->input->post('biaya', true))
+			'biaya' => html_escape($this->input->post('biaya', true)),
+			'nohp' => html_escape($this->input->post('nohp', true))
 		];
 		$this->db->where('id_siswa', $idSiswa);
 		$this->Siswa_m->update('siswa', $data);
