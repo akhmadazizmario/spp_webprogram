@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 order-md-2">
-                    <img src="http://localhost/latihansppwebprogram/login/images/undraw_file_sync_ot38.svg" alt="Image" class="img-fluid">
+                    <img src="http://localhost/latihansppwebprogram/login/images/v.jpg" width="700px" alt="Image">
                 </div>
                 <div class="col-md-6 contents">
                     <div class="row justify-content-center">
@@ -34,24 +34,30 @@
                             <div class="mb-4">
                                 <?= $this->session->flashdata('pesan'); ?>
                                 <center>
-                                    <h3>LOGIN SISWA <br><strong>SMA N 1 TEGAL</strong></h3>
+                                    <h3>
+                                        LOGIN SISWA <br><strong>SMA N 1 TEGAL</strong>
+                                    </h3>
                                 </center>
                                 <center><img class="img-profile rounded-circle" src="https://i.pinimg.com/originals/c1/94/32/c194329bae6d1f4fbe3890136d9fdb5f.png" width="90px" height="90px"></center>
                             </div>
                             <form action="<?= base_url('auth2'); ?>" method="post">
                                 <div class="form-group first">
-                                    <label for="username">Username</label>
+                                    <label for="username">
+                                        Username
+                                    </label>
                                     <input type="text" name="username" class="form-control" id="username">
                                     <small class="muted text-danger"><?= form_error('username'); ?></small>
                                 </div>
                                 <div class="form-group last mb-4">
-                                    <label for="password">Password</label>
+                                    <label for="password">
+                                        Password
+                                    </label>
                                     <input type="password" name="password" class="form-control" id="password">
                                     <small class="muted text-danger"><?= form_error('password'); ?></small>
 
                                 </div>
 
-                                <input type="submit" value="Log In" class="btn text-white btn-block btn-primary">
+                                <input type="submit" value="Log In" class="btn text-white btn-block btn-success">
 
                                 <span class="d-block text-left my-4 text-muted"> or sign in with</span>
 
